@@ -1,0 +1,91 @@
+<!DOCTYPE html><!--
+* CoreUI - Free Angular 13 Admin Template
+* @version v2.13.0
+* @link https://coreui.io/angular/
+* Copyright (c) 2017-2022 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+--><html lang="en"><head>
+  <base href="./">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Github Page">
+  <meta name="author" content="Łukasz Holeczek">
+  <meta name="keyword" content="Bootstrap,Admin,Template,Free,Angular,Dashboard,Typescript">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <title>Tran Minh Quyen - Github Page</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    // Shared ID
+    gtag('config', 'UA-118965717-3');
+    // Angular ID
+    gtag('config', 'UA-118965717-4');
+  </script>
+
+  <script src="https://cdn.faceio.net/fio.js"></script>
+  <script type="text/javascript">
+    // Instantiate fio.js with your application Public ID
+    const faceio = new faceIO("fioa634c");
+    function enrollNewUser() {
+      // Start the facial enrollment process
+      faceio.enroll({
+        "locale": "auto", // Default user locale
+        "payload": {
+          /* The payload we want to associate with this user
+          * which is forwarded back to us upon future
+          * authentication of this particular user.*/
+          "whoami": 123456, // Example of dummy ID linked to this particular user
+          "email": "john.doe@example.com"
+        }
+      }).then(userInfo => {
+        // User Successfully Enrolled!
+        alert(
+          `User Successfully Enrolled! Details:
+            Unique Facial ID: ${userInfo.facialId}
+            Enrollment Date: ${userInfo.timestamp}
+            Gender: ${userInfo.details.gender}
+            Age Approximation: ${userInfo.details.age}`
+        );
+        console.log(userInfo);
+        // handle success, save the facial ID, redirect to dashboard...
+      }).catch(errCode => {
+        // handle enrollment failure. Visit:
+        // https://faceio.net/integration-guide#error-codes
+        // for the list of all possible error codes
+      })
+    }
+    function authenticateUser() {
+      // Authenticate a previously enrolled user
+      faceio.authenticate({
+        "locale": "auto" // Default user locale
+      }).then(userData => {
+        console.log("Success, user identified")
+        // Grab the facial ID linked to this particular user which will be same
+        // for each of his successful future authentication. FACEIO recommend 
+        // that your rely on this Facial ID if you plan to uniquely identify 
+        // all enrolled users on your backend for example.
+        console.log("Linked facial Id: " + userData.facialId)
+        // Grab the arbitrary data you have already linked (if any) to this particular user
+        // during his enrollment via the payload parameter of the enroll() method.
+        console.log("Payload: " + JSON.stringify(userData.payload))
+        // {"whoami": 123456, "email": "john.doe@example.com"} set via enroll()
+      }).catch(errCode => {
+        // handle authentication failure. Visit:
+        // https://faceio.net/integration-guide#error-codes
+        // for the list of all possible error codes
+      })
+    }
+  </script>
+
+<style>@charset "UTF-8";@charset "UTF-8";:root{--blue:#20a8d8;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#f86c6b;--orange:#f8cb00;--yellow:#ffc107;--green:#4dbd74;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#73818f;--gray-dark:#2f353a;--light-blue:#63c2de;--primary:#20a8d8;--secondary:#c8ced3;--success:#4dbd74;--info:#63c2de;--warning:#ffc107;--danger:#f86c6b;--light:#f0f3f5;--dark:#2f353a;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-family-monospace:SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}*,*:before,*:after{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";font-size:.875rem;font-weight:400;line-height:1.5;color:#23282c;text-align:left;background-color:#e4e5e6}@media print{*,*:before,*:after{text-shadow:none!important;box-shadow:none!important}@page{size:a3}body{min-width:992px!important}}@media all and (-ms-high-contrast: none){html{display:flex;flex-direction:column}}.app{display:flex;flex-direction:column;min-height:100vh}@media (min-width: 576px){}@media (min-width: 768px){}@media (min-width: 992px){}@media (min-width: 1200px){}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}</style><link rel="stylesheet" href="styles.ac2f2d4297efd2d8.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.ac2f2d4297efd2d8.css"></noscript></head>
+
+<body class="app">
+  <!-- App Loading... -->
+
+<script src="runtime.1c9de6df0f838390.js" type="module"></script><script src="polyfills.63c9927a3940f3c2.js" type="module"></script><script src="scripts.bb4734a42b759ea0.js" defer></script><script src="main.d83d805bf115940d.js" type="module"></script>
+
+</body></html>
